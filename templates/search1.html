@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+
+<!-- head -->
+<head>
+<!-- Characer Encoding -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<!-- Webpage Title -->
+<title>Search Engine</title>
+<!-- Connecivity of css page -->
+<link rel="stylesheet" type="text/css" href="/static/two.css">
+<link rel="stylesheet" type="text/css" href="/static/w3.css">
+<!-- Connectivity of css page in HTML -->
+<style>
+#wrapper
+{
+margin-left: 10%;
+margin-right: 30%;
+}
+</style>
+</head>
+<!-- End of header -->
+
+<!-- Body of HTML page Start -->
+<body>
+<div id="header-wrapper">
+		<!-- Logo -->
+		<img src="/static/1.png" width="15%" height="30%">
+		<br /><br />
+						<!-- Searching Bar/Box -->
+					<form action="." method="post">		    
+						<input type="search" name="sent" size='50' class="ak" placeholder="What are you looking for?" value="{{ text1 }}">		    	
+						<button type="Submit" class="akb" value="search">Search</button>
+					</form>
+</div>
+
+<!-- Menu -->												
+<div id="menu">
+				<ul>
+				<form method="get">
+				<li><a href="." class="current_page_item">Home</a></li>
+				</form>
+				</ul>
+</div>
+
+<hr />
+<br /> 
+
+<!-- Searching Elements in wrapper/container -->
+	{% for x in value3 %}
+	<div id="wrapper">
+	<h2><a href="{{ x }}">{{ value1[value3.index(x)] }}</a></h2>
+		<h6><a href="{{ x }}">{{ x }}</a></h6>
+				<p>{{ value2[value3.index(x)] }}	
+				</p>	
+	<hr />
+	</div>		
+	{% endfor %}			
+ 
+	
+<!-- End of Body of HTML -->
+</body>
+</html>
